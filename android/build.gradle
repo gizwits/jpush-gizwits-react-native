@@ -17,6 +17,5 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // compile files('lib/jpush-android-3.5.4.jar')
     implementation 'com.facebook.react:react-native:+'
 }

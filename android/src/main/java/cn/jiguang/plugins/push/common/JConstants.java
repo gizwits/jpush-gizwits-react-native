@@ -33,6 +33,7 @@ public class JConstants {
     //通知消息
     public static final String NOTIFICATION_EVENT_TYPE = "notificationEventType";
     public static final String NOTIFICATION_MAX_NUMBER = "notificationMaxNumber";
+    public static final String NOTIFICATION_ID = "notificationId";
     //cmd消息
     public static final String COMMAND = "command";
     public static final String COMMAND_EXTRA = "commandExtra";
@@ -59,4 +60,5 @@ public class JConstants {
     public static final String TAG_ALIAS_EVENT = "TagAliasEvent";
     public static final String MOBILE_NUMBER_EVENT = "MobileNumberEvent";
     public static final String COMMAND_EVENT = "CommandEvent";
+    public static final String BADGE_NUMBER = "badge";
 }

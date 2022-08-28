@@ -94,7 +94,19 @@ public class JPushModule extends ReactContextBaseJavaModule {
             JPushInterface.setChannel(reactContext, channel);
         }
     }
-
+    @ReactMethod
+    public void setBadgeNumber(ReadableMap readableMap) {
+        if (readableMap == null) {
+            JLogger.w(JConstants.PARAMS_NULL);
+            return;
+        }
+        if (readableMap.hasKey(JConstants.BADGE_NUMBER)) {
+            int number = readableMap.getInt(JConstants.BADGE_NUMBER);
+            JPushInterface.setBadgeNumber(reactContext,number);
+        } else {
+            JLogger.w("there are no " + JConstants.BADGE_NUMBER);
+        }
+    }
     @ReactMethod
     public void setPushTime(ReadableMap readableMap) {
         if (readableMap == null) {
@@ -460,6 +472,41 @@ public class JPushModule extends ReactContextBaseJavaModule {
             JLogger.w("there are no " + JConstants.GEO_FENCE_ID);
         }
     }
+
+    @ReactMethod
+    public void clearAllNotifications(){
+        JPushInterface.clearAllNotifications(reactContext);
+    }
+
+    @ReactMethod
+    public void clearNotificationById(ReadableMap readableMap){
+        if (readableMap == null){
+            JLogger.w(JConstants.PARAMS_NULL);
+            return;
+        }
+        if (readableMap.hasKey(JConstants.NOTIFICATION_ID)){
+            Integer id = readableMap.getInt(JConstants.NOTIFICATION_ID);
+            JPushInterface.clearNotificationById(reactContext,id);
+        }else {
+            JLogger.w("there are no " + JConstants.GEO_FENCE_ID);
+        }
+    }
+
+    @ReactMethod
+    public void setPowerSaveMode(boolean bool){
+        JPushInterface.setPowerSaveMode(reactContext,bool);
+    }
+
+    @ReactMethod
+    public void isNotificationEnabled(Callback callback){
+        Integer isEnabled = JPushInterface.isNotificationEnabled(reactContext);
+        if (callback == null){
+            JLogger.w(JConstants.CALLBACK_NULL);
+            return;
+        }
+        callback.invoke(isEnabled);
+    }
+
 
     //*****************************应用前后台状态监听*****************************
     public static void registerActivityLifecycle(Application application) {
