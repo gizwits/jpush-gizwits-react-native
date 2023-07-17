@@ -1,12 +1,12 @@
 {
   "name": "jpush-gizwits-react-native",
-  "description": "取消谷歌版本的后台定位权限",
+  "description": "更新国内SDK",
   "homepage": "https://github.com/jpush/jpush-react-native",
   "main": "index.js",
   "types": "index.d.ts",
   "license": "ISC",
   "author": "wicked.tc130",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/jpush/jpush-react-native"
